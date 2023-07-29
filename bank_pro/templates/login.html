@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        form{
+        padding-left:43%;
+        }
+        input{
+        margin-bottom:18px;
+        }
+        .button{
+        text-align:center;
+        }
+        body{
+        padding-bottom:220px;
+        }
+    </style>
+</head>
+<body style="background: linear-gradient(grey, steelblue); color:white;">
+<h2 style="text-align:center;">Login</h2>
+<form method="post" action="login">
+  {% csrf_token %}
+    <div class="container" >
+  <label>Username:</label><br>
+  <input type="text"  name="username"><br>
+  <label>Password:</label><br>
+  <input type="password"  name="password"><br>
+  <label>Confirm Password:</label><br>
+  <input type="password"  name="cpassword"><br>
+  <input class="button" type="submit">
+     </div>
+</form>
+<br>
+<p style="text-align:center;">Create an account <a href="register">Register Here</a></p>
+{% for msg in messages %}
+<b>{{msg}}</b>
+{% endfor %}
+</body>
+</html>
